@@ -1,17 +1,13 @@
 extends Node
 
 
-# Declare member variables here. Examples:
 var x = true
 
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
-	pass
+	$Sprite.self_modulate = Color($Red.value, $Green.value, $Blue.value)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_Blue_value_changed(value):
@@ -23,6 +19,7 @@ func _on_Blue_value_changed(value):
 		$Green.value -= dif
 	
 	$Sprite.self_modulate = Color($Red.value, $Green.value, $Blue.value)
+
 
 
 func _on_Green_value_changed(value):
@@ -38,6 +35,7 @@ func _on_Green_value_changed(value):
 		$Red.value -= dif/2
 	
 	$Sprite.self_modulate = Color($Red.value, $Green.value, $Blue.value)
+
 
 
 func _on_Red_value_changed(value):
